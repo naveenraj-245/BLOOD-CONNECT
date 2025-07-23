@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ctaButtons.forEach((btn) => {
       btn.addEventListener("click", (e) => {
         console.log(`Homepage button clicked: ${e.target.textContent}`);
-        // Optional: window.location.href = btn.getAttribute("href");
+        // Optional redirect
+        // window.location.href = btn.getAttribute("href");
       });
     });
   }
@@ -20,12 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
     dashboardButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
         console.log(`Dashboard button clicked: ${btn.textContent}`);
-        // Optional: open modal or redirect
+        // Optional modal or navigation
       });
     });
   }
 
-  // 🔍 Search Page Logic
+  // 🔍 Donor Search Logic
   const searchForm = document.getElementById("donorSearchForm");
   const resultsSection = document.getElementById("resultsSection");
 
@@ -66,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 👤 Edit Profile Logic
+  // 👤 Edit Profile Validation
   const profileForm = document.getElementById("editProfileForm");
 
   if (profileForm) {
@@ -95,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 🩸 Donation Form Logic
+  // 🩸 Donation Submission Logic
   const donationForm = document.getElementById("donationForm");
 
   if (donationForm) {
@@ -141,8 +142,75 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // 📝 Registration Form Logic
+  const registerForm = document.getElementById("registerForm");
+
+  if (registerForm) {
+    registerForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const fullName = document.getElementById("fullName")?.value.trim() || "";
+      const email = document.getElementById("email")?.value.trim() || "";
+      const bloodGroup = document.getElementById("bloodGroup")?.value.trim() || "";
+      const city = document.getElementById("city")?.value.trim() || "";
+      const password = document.getElementById("password")?.value.trim() || "";
+      const confirmPassword = document.getElementById("confirmPassword")?.value.trim() || "";
+
+      if (!fullName || !email || !bloodGroup || !city || !password || !confirmPassword) {
+        const warning = document.createElement("div");
+        warning.textContent = "⚠️ Please fill in all required fields.";
+        warning.style.cssText = `
+          background: #ffebee;
+          color: #c62828;
+          padding: 1rem;
+          margin-top: 1rem;
+          border-radius: 10px;
+          text-align: center;
+          font-weight: bold;
+        `;
+        registerForm.appendChild(warning);
+        setTimeout(() => warning.remove(), 3000);
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        const mismatch = document.createElement("div");
+        mismatch.textContent = "⚠️ Passwords do not match.";
+        mismatch.style.cssText = `
+          background: #ffebee;
+          color: #c62828;
+          padding: 1rem;
+          margin-top: 1rem;
+          border-radius: 10px;
+          text-align: center;
+          font-weight: bold;
+        `;
+        registerForm.appendChild(mismatch);
+        setTimeout(() => mismatch.remove(), 3000);
+        return;
+      }
+
+      const success = document.createElement("div");
+      success.textContent = "✅ Registration successful! Welcome aboard.";
+      success.style.cssText = `
+        background: #dcedc8;
+        color: #2e7d32;
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 10px;
+        text-align: center;
+        font-weight: bold;
+      `;
+      registerForm.appendChild(success);
+      setTimeout(() => success.remove(), 3000);
+
+      console.log("New Donor Registered:", { fullName, email, bloodGroup, city });
+      registerForm.reset();
+    });
+  }
+
   // ⏳ Future Enhancements
-  // - Donor filtering with real data
-  // - Form error highlights and animations
-  // - Store donation records and show them on dashboard
+  // - Store donations using localStorage
+  // - Add navbar interactions
+  // - Render dynamic donation history on dashboard
 });
