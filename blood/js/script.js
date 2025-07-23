@@ -33,8 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
     searchForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      const blood = document.getElementById("bloodGroup").value.trim();
-      const location = document.getElementById("location").value.trim();
+      const bloodInput = document.getElementById("bloodGroup");
+      const locationInput = document.getElementById("location");
+
+      const blood = bloodInput?.value.trim() || "";
+      const location = locationInput?.value.trim() || "";
 
       if (blood && location) {
         resultsSection.innerHTML = `
@@ -70,12 +73,12 @@ document.addEventListener("DOMContentLoaded", () => {
     profileForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const blood = document.getElementById("bloodGroup").value.trim();
-      const city = document.getElementById("city").value.trim();
-      const password = document.getElementById("password").value.trim();
-      const confirm = document.getElementById("confirmPassword").value.trim();
+      const name = document.getElementById("name")?.value.trim() || "";
+      const email = document.getElementById("email")?.value.trim() || "";
+      const blood = document.getElementById("bloodGroup")?.value.trim() || "";
+      const city = document.getElementById("city")?.value.trim() || "";
+      const password = document.getElementById("password")?.value.trim() || "";
+      const confirm = document.getElementById("confirmPassword")?.value.trim() || "";
 
       if (!name || !email || !blood || !city || !password || !confirm) {
         alert("⚠️ Please fill in all fields.");
@@ -87,14 +90,36 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Simulate update success
       alert("✅ Profile updated successfully!");
       console.log("Updated Profile:", { name, email, blood, city });
     });
   }
 
+  // 🩸 Donation Form Logic
+  const donationForm = document.getElementById("donationForm");
+
+  if (donationForm) {
+    donationForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const date = document.getElementById("date")?.value.trim() || "";
+      const location = document.getElementById("location")?.value.trim() || "";
+      const recipient = document.getElementById("recipient")?.value.trim() || "";
+
+      if (!date || !location || !recipient) {
+        alert("⚠️ Please fill in all required fields: Date, Location, and Recipient.");
+        return;
+      }
+
+      alert("✅ Thank you! Your donation has been recorded.");
+      console.log("Donation submitted:", { date, location, recipient });
+
+      donationForm.reset();
+    });
+  }
+
   // ⏳ Future Enhancements
   // - Donor filtering with real data
-  // - Form error highlights
-  // - Saving profile to local storage or backend
+  // - Form error highlights and animations
+  // - Store donation records and show them on dashboard
 });
