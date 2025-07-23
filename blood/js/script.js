@@ -107,13 +107,36 @@ document.addEventListener("DOMContentLoaded", () => {
       const recipient = document.getElementById("recipient")?.value.trim() || "";
 
       if (!date || !location || !recipient) {
-        alert("⚠️ Please fill in all required fields: Date, Location, and Recipient.");
+        const warning = document.createElement("div");
+        warning.textContent = "⚠️ Please fill in all required fields.";
+        warning.style.cssText = `
+          background: #ffebee;
+          color: #c62828;
+          padding: 1rem;
+          margin-top: 1rem;
+          border-radius: 10px;
+          text-align: center;
+          font-weight: bold;
+        `;
+        donationForm.appendChild(warning);
+        setTimeout(() => warning.remove(), 3000);
         return;
       }
 
-      alert("✅ Thank you! Your donation has been recorded.");
+      const confirmation = document.createElement("div");
+      confirmation.textContent = "🩸 Thank you! Donation recorded.";
+      confirmation.style.cssText = `
+        background: #dcedc8;
+        color: #2e7d32;
+        padding: 1rem;
+        margin-top: 1rem;
+        border-radius: 10px;
+        text-align: center;
+        font-weight: bold;
+      `;
+      donationForm.appendChild(confirmation);
+      setTimeout(() => confirmation.remove(), 3000);
       console.log("Donation submitted:", { date, location, recipient });
-
       donationForm.reset();
     });
   }
