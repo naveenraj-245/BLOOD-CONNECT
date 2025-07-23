@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ctaButtons.forEach((btn) => {
       btn.addEventListener("click", (e) => {
         console.log(`Homepage button clicked: ${e.target.textContent}`);
-        // Optional redirect
+        // Optional: redirect
         // window.location.href = btn.getAttribute("href");
       });
     });
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dashboardButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
         console.log(`Dashboard button clicked: ${btn.textContent}`);
-        // Optional modal or navigation
+        // Optional: open modal or redirect
       });
     });
   }
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 👤 Edit Profile Validation
+  // 👤 Edit Profile Form Validation
   const profileForm = document.getElementById("editProfileForm");
 
   if (profileForm) {
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 🩸 Donation Submission Logic
+  // 🩸 Donation Form + LocalStorage Save
   const donationForm = document.getElementById("donationForm");
 
   if (donationForm) {
@@ -124,6 +124,12 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
+      const newDonation = { date, location, recipient };
+
+      const existing = JSON.parse(localStorage.getItem("donations") || "[]");
+      existing.push(newDonation);
+      localStorage.setItem("donations", JSON.stringify(existing));
+
       const confirmation = document.createElement("div");
       confirmation.textContent = "🩸 Thank you! Donation recorded.";
       confirmation.style.cssText = `
@@ -137,12 +143,13 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
       donationForm.appendChild(confirmation);
       setTimeout(() => confirmation.remove(), 3000);
-      console.log("Donation submitted:", { date, location, recipient });
+
+      console.log("Donation saved:", newDonation);
       donationForm.reset();
     });
   }
 
-  // 📝 Registration Form Logic
+  // 📝 Registration Form Validation
   const registerForm = document.getElementById("registerForm");
 
   if (registerForm) {
@@ -210,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ⏳ Future Enhancements
-  // - Store donations using localStorage
-  // - Add navbar interactions
-  // - Render dynamic donation history on dashboard
+  // - Render localStorage donations on dashboard
+  // - Add navbar navigation
+  // - Live deployment to Netlify
 });
