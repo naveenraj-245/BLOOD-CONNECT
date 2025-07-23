@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register to Help | BloodConnect</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body class="edit-profile-page">
+
+  <header class="dashboard-header">
+    <h1>Register as a Donor</h1>
+    <p>Join our mission to save lives — one donation at a time.</p>
+  </header>
+
+  <section class="profile-form">
+    <form id="registerForm">
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" placeholder="Enter full name" />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter email address" />
+
+      <label for="bloodGroup">Blood Group</label>
+      <select id="bloodGroup">
+        <option value="">-- Select --</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+      </select>
+
+      <label for="city">City</label>
+      <input type="text" id="city" placeholder="Enter city" />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Create password" />
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" placeholder="Confirm password" />
+
+      <button type="submit" class="cta-btn">Create Account</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 BloodConnect. Every new donor counts.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
