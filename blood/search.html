@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find Blood Donors | BloodConnect</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body class="search-page">
+
+  <header class="dashboard-header">
+    <h1>Search Donors</h1>
+    <p>Filter by blood type and location to find nearby heroes.</p>
+  </header>
+
+  <section class="search-form">
+    <form id="donorSearchForm">
+      <label for="bloodGroup">Blood Group</label>
+      <select id="bloodGroup">
+        <option value="">-- Select --</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+      </select>
+
+      <label for="location">City or Area</label>
+      <input type="text" id="location" placeholder="Enter location" />
+
+      <button type="submit" class="cta-btn">Search</button>
+    </form>
+  </section>
+
+  <section class="search-results" id="resultsSection">
+    <h2>Results</h2>
+    <div class="result-card">No results yet. Try searching!</div>
+  </section>
+
+  <footer>
+    <p>© 2025 BloodConnect. Saving lives together.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
