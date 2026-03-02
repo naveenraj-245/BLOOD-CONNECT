@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Request - BloodConnect</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="auth-container">
+
+<div class="auth-card large-card">
+
+<h2>Emergency Blood Request</h2>
+<p class="auth-subtitle">
+Submit request to notify nearby donors instantly.
+</p>
+
+<form id="request-form">
+
+<!-- Patient Name -->
+<div class="form-group">
+<label>Patient Name</label>
+<input type="text" id="patient" required>
+</div>
+
+<!-- Blood Group -->
+<div class="form-group">
+<label>Blood Group Required</label>
+<select id="reqBlood" required>
+<option value="">Select Blood Group</option>
+<option>O+</option>
+<option>O-</option>
+<option>A+</option>
+<option>A-</option>
+<option>B+</option>
+<option>B-</option>
+<option>AB+</option>
+<option>AB-</option>
+</select>
+</div>
+
+<!-- Units -->
+<div class="form-group">
+<label>Units Required</label>
+<input type="number" id="units" min="1" required>
+</div>
+
+<!-- Hospital -->
+<div class="form-group">
+<label>Hospital Name</label>
+<input type="text" id="hospital" required>
+</div>
+
+<!-- Location -->
+<div class="form-group">
+<label>Location</label>
+<input type="text" id="reqLocation" required>
+</div>
+
+<!-- Contact -->
+<div class="form-group">
+<label>Contact Number</label>
+<input type="tel" id="reqPhone" required>
+</div>
+
+<!-- Urgency -->
+<div class="form-group">
+<label>Urgency Level</label>
+
+<div class="urgency-group">
+
+<label class="urgency low">
+<input type="radio" name="urgency" value="Low">
+Low
+</label>
+
+<label class="urgency moderate">
+<input type="radio" name="urgency" value="Moderate">
+Moderate
+</label>
+
+<label class="urgency high">
+<input type="radio" name="urgency" value="High">
+High
+</label>
+
+</div>
+
+</div>
+
+<button type="submit" class="btn-primary full-width">
+Send Emergency Request
+</button>
+
+<p id="request-error" style="color:red;margin-top:10px;"></p>
+
+</form>
+
+</div>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

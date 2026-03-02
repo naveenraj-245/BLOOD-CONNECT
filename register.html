@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - BloodConnect</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= REGISTER CONTAINER ================= -->
+
+    <div class="auth-container">
+
+        <div class="auth-card large-card">
+
+            <h2>Create Account</h2>
+            <p class="auth-subtitle">Join BloodConnect and help save lives.</p>
+
+            <form id="register-form">
+
+                <!-- ===== PERSONAL DETAILS ===== -->
+
+                <h4 class="form-section-title">Personal Details</h4>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="blood">Blood Group</label>
+                    <select id="blood" required>
+                        <option value="">Select Blood Group</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter 10-digit phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="Enter your city" required>
+                </div>
+
+
+                <!-- ===== ACCOUNT DETAILS ===== -->
+
+                <h4 class="form-section-title">Account Details</h4>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Create password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Register As</label>
+                    <select id="role" required>
+                        <option value="">Select Role</option>
+                        <option>Donor</option>
+                        <option>Hospital</option>
+                    </select>
+                </div>
+
+                <!-- ===== SUBMIT BUTTON ===== -->
+
+                <button type="submit" class="btn-primary full-width">
+                    Create Account
+                </button>
+
+                <!-- Error Message Display -->
+                <p id="error-msg" style="color: red; margin-top: 10px;"></p>
+
+            </form>
+
+            <p class="auth-footer">
+                Already have an account?
+                <a href="login.html">Login</a>
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

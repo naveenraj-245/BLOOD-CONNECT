@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard - BloodConnect</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+
+<header class="dashboard-header admin-header">
+
+<div class="dashboard-logo">BloodConnect Admin</div>
+
+<div class="dashboard-user">
+<span>Hospital Panel</span>
+<button class="btn-outline" onclick="logout()">Logout</button>
+</div>
+
+</header>
+
+
+<!-- ===== MAIN CONTAINER ===== -->
+
+<div class="dashboard-container">
+
+<h2>Hospital Control Center</h2>
+
+<!-- ===== SUMMARY CARDS ===== -->
+
+<div class="stats">
+
+<div class="stat-card">
+<h3>Total Donors</h3>
+<p>120</p>
+</div>
+
+<div class="stat-card">
+<h3>Active Requests</h3>
+<p>8</p>
+</div>
+
+<div class="stat-card">
+<h3>High Urgency</h3>
+<p style="color:red;">3 Critical</p>
+</div>
+
+<div class="stat-card">
+<h3>Verified Hospitals</h3>
+<p>15</p>
+</div>
+
+</div>
+
+
+<!-- ===== REQUEST MANAGEMENT ===== -->
+
+<h3 style="margin-top:40px;">Emergency Requests</h3>
+
+<div class="request-list">
+
+<div class="request-card high">
+<h4>Patient: Arun Kumar</h4>
+<p>Blood: B+</p>
+<p>Hospital: Apollo</p>
+<p>Units Needed: 2</p>
+
+<span class="badge high-badge">HIGH</span>
+
+<button class="btn-primary">Dispatch Donor</button>
+</div>
+
+
+<div class="request-card moderate">
+<h4>Patient: Meena R</h4>
+<p>Blood: A+</p>
+<p>Hospital: Global Hospital</p>
+<p>Units Needed: 1</p>
+
+<span class="badge moderate-badge">MODERATE</span>
+
+<button class="btn-outline">Dispatch Donor</button>
+</div>
+
+</div>
+
+
+<!-- ===== DONOR APPROVAL ===== -->
+
+<h3 style="margin-top:40px;">Pending Donor Approvals</h3>
+
+<div class="request-list">
+
+<div class="request-card">
+<h4>Name: Rahul</h4>
+<p>Blood Group: O+</p>
+<p>Location: Chennai</p>
+
+<button class="btn-primary">Approve</button>
+<button class="btn-outline">Reject</button>
+</div>
+
+</div>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donor Dashboard - BloodConnect</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ===== DASHBOARD HEADER ===== -->
+
+<header class="dashboard-header">
+<div class="dashboard-logo">BloodConnect</div>
+
+<div class="dashboard-user">
+<span id="user-name"></span>
+
+<button class="btn-outline" onclick="logout()">Logout</button>
+</div>
+</header>
+
+
+<!-- ===== DASHBOARD MAIN ===== -->
+
+<div class="dashboard-container">
+
+<h2>Donor Dashboard</h2>
+
+<!-- ===== STATS CARDS ===== -->
+
+<div class="stats">
+
+<div class="stat-card">
+<h3>My Blood Group</h3>
+<p>O+</p>
+</div>
+
+<div class="stat-card">
+<h3>Availability</h3>
+<button id="availability-btn" class="btn-primary">
+Available
+</button>
+</div>
+
+<div class="stat-card">
+<h3>Nearby Requests</h3>
+<p>3 Active</p>
+</div>
+
+</div>
+
+
+<!-- ===== REQUEST LIST ===== -->
+
+<h3 style="margin-top:40px;">Nearby Blood Requests</h3>
+
+<div class="request-list" id="request-list"></div>
+
+<div class="request-card high">
+<h4>Patient: Raj Kumar</h4>
+<p>Blood Group: O+</p>
+<p>Hospital: Apollo</p>
+<p>Distance: 2.4 km</p>
+<span class="badge high-badge">HIGH</span>
+<button class="btn-primary">Accept</button>
+</div>
+
+<div class="request-card moderate">
+<h4>Patient: Priya Sharma</h4>
+<p>Blood Group: O+</p>
+<p>Hospital: City Hospital</p>
+<p>Distance: 4.1 km</p>
+<span class="badge moderate-badge">MODERATE</span>
+<button class="btn-outline">Accept</button>
+</div>
+
+</div>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
